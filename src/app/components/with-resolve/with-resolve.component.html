@@ -1,5 +1,7 @@
 <div style="width:50%; text-align: center; border: dashed; margin-left: 25%">
   regular works!
   <br>
-  {{data}}
+  <div *ngFor="let user of randomUsers">
+    {{user.name.first}} {{user.name.last}}
+  </div>
 </div>

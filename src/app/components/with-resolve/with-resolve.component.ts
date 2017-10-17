@@ -8,13 +8,18 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class WithResolveComponent implements OnInit {
 
-  data: any;
+  randomUsers: any;
+  res: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    this.data = this.route.data['value'].someName['_body'];
+    var data = this.route.data['value'].someName['_body'];
+    console.log(this.route.data);
+    this.res = JSON.parse(this.route.data['value'].someName['_body']);
+    this.randomUsers = this.res.results;
+    console.log(this.randomUsers);
   }
 
   ngOnInit() {

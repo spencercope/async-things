@@ -27,7 +27,7 @@ const routes: Routes = [{
     }
   },
   {
-    path: 'withResolve',
+    path: 'withBreezeAndResolve',
     component: WithBreezeAndResolveComponent
   },
 ];

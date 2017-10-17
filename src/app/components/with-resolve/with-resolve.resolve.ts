@@ -14,6 +14,6 @@ export class WithResolveResolve {
   }
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.http.get('http://localhost:3333/services/util/withTimeout');
+    return this.http.get('https://randomuser.me/api/?results=50');
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from "@angular/http";
 import "rxjs/add/operator/map";
-import {Observable} from "rxjs/Observable";
+import {Observable, Subject} from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-regular',
@@ -10,18 +11,22 @@ import {Observable} from "rxjs/Observable";
 })
 export class RegularComponent implements OnInit {
 
-  data: any;
+  randomUser: any;
+  res: any;
 
   constructor(
     public http: Http
   ) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:3333/services/util/withTimeout')
+    this.http.get('https://randomuser.me/api/?results=50')
       .subscribe(data => {
         console.log(data);
-        this.data = data['_body'];
-        console.log(this.data);
+        // this.res = JSON.parse(data['_body']);
+        // this.randomUser = this.res.results[0];
+        // console.log(this.randomUser);
+        // console.log(this.randomUser.cell);
+        this.randomUser = data['_body'];
       })
   }
 
